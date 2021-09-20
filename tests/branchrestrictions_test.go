@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/ktrysmt/go-bitbucket"
+	"github.com/kmdrn7/go-bitbucket"
 )
 
 var (

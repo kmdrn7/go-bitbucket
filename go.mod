@@ -1,11 +1,13 @@
 module github.com/kmdrn7/go-bitbucket
 
-go 1.14
+go 1.16
 
 require (
-	github.com/k0kubun/pp v2.3.0+incompatible
-	github.com/mitchellh/mapstructure v0.0.0-20180220230111-00c29f56e238
-	github.com/stretchr/testify v1.6.1
-	golang.org/x/net v0.0.0-20180218175443-cbe0f9307d01
-	golang.org/x/oauth2 v0.0.0-20180227000427-d7d64896b5ff
+	github.com/k0kubun/colorstring v0.0.0-20150214042306-9440f1994b88 // indirect
+	github.com/k0kubun/pp v3.0.1+incompatible
+	github.com/mattn/go-colorable v0.1.9 // indirect
+	github.com/mitchellh/mapstructure v1.4.2
+	github.com/stretchr/testify v1.7.0
+	golang.org/x/net v0.0.0-20210917221730-978cfadd31cf
+	golang.org/x/oauth2 v0.0.0-20210819190943-2bc19b11175f
 )
