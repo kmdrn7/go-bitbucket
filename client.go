@@ -23,7 +23,7 @@ import (
 
 const DEFAULT_PAGE_LENGTH = 10
 const DEFAULT_MAX_DEPTH = 1
-const DEFAULT_BITBUCKET_API_BASE_URL = "https://api.bitbucket.org/2.0"
+const DEFAULT_BITBUCKET_API_BASE_URL = "http://192.168.100.29:7990/rest/api/1.0"
 
 func apiBaseUrl() (*url.URL, error) {
 	ev := os.Getenv("BITBUCKET_API_BASE_URL")

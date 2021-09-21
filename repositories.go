@@ -6,8 +6,6 @@ import (
 	"github.com/mitchellh/mapstructure"
 )
 
-//"github.com/k0kubun/pp"
-
 type Repositories struct {
 	c                  *Client
 	PullRequests       *PullRequests

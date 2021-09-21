@@ -66,7 +66,7 @@ func (p *PullRequests) Gets(po *PullRequestsOptions) (interface{}, error) {
 }
 
 func (p *PullRequests) Get(po *PullRequestsOptions) (interface{}, error) {
-	urlStr := p.c.GetApiBaseURL() + "/repositories/" + po.Owner + "/" + po.RepoSlug + "/pullrequests/" + po.ID
+	urlStr := p.c.GetApiBaseURL() + "/projects/" + po.Owner + "/repos/" + po.RepoSlug + "/pull-requests/" + po.ID
 	return p.c.execute("GET", urlStr, "")
 }
 
@@ -138,7 +138,7 @@ func (p *PullRequests) GetComment(po *PullRequestsOptions) (interface{}, error) 
 }
 
 func (p *PullRequests) CreateComment(pco *PullRequestsCommentsOptions) (interface{}, error) {
-	urlStr := p.c.GetApiBaseURL() + "/repositories/" + pco.Owner + "/" + pco.RepoSlug + "/pullrequests/" + pco.ID + "/comments/"
+	urlStr := p.c.GetApiBaseURL() + "/projects/" + pco.Owner + "/repos/" + pco.RepoSlug + "/pull-requests/" + pco.ID + "/comments/"
 	data, err := p.buildCommentBody(pco)
 	if err != nil {
 		return nil, err
@@ -175,9 +175,7 @@ func (p *PullRequests) Statuses(po *PullRequestsOptions) (interface{}, error) {
 
 func (p *PullRequests) buildCommentBody(pco *PullRequestsCommentsOptions) (string, error) {
 	body := map[string]interface{}{}
-	body["content"] = map[string]interface{}{
-		"raw": pco.CommentContent,
-	}
+	body["text"] = pco.CommentContent
 
 	data, err := json.Marshal(body)
 	if err != nil {
