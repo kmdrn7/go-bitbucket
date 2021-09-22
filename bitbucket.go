@@ -186,6 +186,7 @@ type RepositoryBlobOptions struct {
 	RepoSlug string `json:"repo_slug"`
 	Ref      string `json:"ref"`
 	Path     string `json:"path"`
+	FileName string `json:"file_name"`
 }
 
 // Based on https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/src#post

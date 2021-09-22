@@ -249,7 +249,7 @@ func (r *Repository) ListFiles(ro *RepositoryFilesOptions) ([]RepositoryFile, er
 }
 
 func (r *Repository) GetFileBlob(ro *RepositoryBlobOptions) (*RepositoryBlob, error) {
-	filePath := path.Join("/repositories", ro.Owner, ro.RepoSlug, "src", ro.Ref, ro.Path)
+	filePath := path.Join("/projects", ro.Owner, "repos", ro.RepoSlug, "archive?at=" + ro.Ref + "&path=" + ro.Path + "&filename=" + ro.FileName)
 	urlStr := r.c.requestUrl(filePath)
 	response, err := r.c.executeRaw("GET", urlStr, "")
 	if err != nil {
